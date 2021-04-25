@@ -2,6 +2,7 @@ let denoStars = NaN;
 let nodeStars = NaN;
 
 async function fetchData() {
+  try {
   denoStars = Number(
     (await fetch("https://api.github.com/repos/denoland/deno").then((data) =>
       data.json()
@@ -12,6 +13,9 @@ async function fetchData() {
       data.json()
     )).stargazers_count,
   );
+  } catch(error) {
+    console.error(error);
+  }
 }
 
 await fetchData();
