@@ -25,8 +25,8 @@ async function handleRequest(request) {
       <h1>Node</h1>
       <span>${nodeStars} ⭐️</span>
 
-      <span>${text}</span>
-      
+      <span>${differenceText}</span>
+
       </body>`,
     {
       headers: {
